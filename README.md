@@ -53,10 +53,9 @@ php artisan vendor:publish --tag="laravel-telemetry-views"
 
 ## Usage
 
-```php
-$telemetry = new Centrex\Telemetry();
-echo $telemetry->echoPhrase('Hello, Centrex!');
-```
+This package will work out of the box with a default OTLP exporter configuration.
+
+The default port is `4318`, and requests will be sent to `http://localhost:4318`.
 
 ## Testing
 

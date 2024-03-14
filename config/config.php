@@ -1,8 +1,20 @@
 <?php
 
 /*
- * You can place your custom package configuration in here.
+ * The Configuration is based on OpenTelemetry's naming convention.
  */
 return [
+    'enabled' => env('LARAVEL_TELEMETRY_ENABLED', true),
 
+    'exporter' => [
+        'otlp' => [
+            'endpoint' => env('OTEL_EXPORTER_OTLP_ENDPOINT', 'http://localhost:4318'),
+            'metrics' => [
+                'endpoint' => env('OTEL_EXPORTER_OTLP_METRICS_ENDPOINT', 'http://localhost:4318/v1/metrics'),
+            ],
+            'traces' => [
+                'endpoint' => env('OTEL_EXPORTER_OTLP_TRACES_ENDPOINT', 'http://localhost:4318/v1/traces'),
+            ],
+        ],
+    ],
 ];
